@@ -29,8 +29,7 @@ class NumGenerator extends Component {
     this.state = {
       min: 1,
       max: 6,
-      number: 1,
-      themeName: "TechEden!"
+      number: 1
     }
   }
 
@@ -47,25 +46,7 @@ class NumGenerator extends Component {
   }
   
   generateNumber = (min, max) => {
-    const x = Math.floor(Math.random()*Number(max-min+1))+Number(min)
-    if(x === 1){
-      this.setState({themeName: "Fintech"})
-    }
-    else if(x === 2){
-      this.setState({themeName: "Automation Tools"})
-    }
-    else if(x === 3){
-      this.setState({themeName: "Healthtech"})
-    }
-    else if(x === 4){
-      this.setState({themeName: "Transport"})
-    }
-    else if(x === 5){
-      this.setState({themeName: "Space"})
-    }
-    else if(x === 6){
-      this.setState({themeName: "Education"})
-    }
+    return Math.floor(Math.random()*Number(max-min+1))+Number(min)
   }
   
   getInputs = () => {
@@ -91,8 +72,8 @@ class NumGenerator extends Component {
   render() {
     return (
       <div id="generator">
-        <div id="title">Random Theme Picker</div>
-        <p id="rNum">{ this.state.themeName }</p>
+        <div id="title">Random Number Generator</div>
+        <p id="rNum">{ this.state.number }</p>
         <div id="inputContainer">
           <div id="headers"> 
             <p>Min</p>
