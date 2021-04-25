@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+$bg: #ececec;
+$generator-bg: white;
+$padding: 1em;
+$title: #ffffff;
+$accent-primary: #673AB7;
+$accent-secondary: #512DA8;
+$text: #212121;
+
+body { 
+  background: $bg;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+#generator {
+  background: $generator-bg;
+  max-width: 25em;
+  animation: fadeIn 1s ease-in-out; 
+  backface-visibility: hidden;
+  transition: all 0.5s;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+#title {
+  color: $title;
+  font-size: 1.2em;
+  padding: $padding;
+  background: $accent-secondary;
+}
+
+#rNum {
+  padding: 0.8em;
+  font-size: 3em;
+  margin: 0;
+  color: $text;
+  transition: padding 0.2s;
+}
+
+#inputs, #headers {
+  display: flex;
+  align-content: center;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  color: $text;
+  input {
+    -webkit-appearance: none;
+    border: 0;
+    font-size: 1.1em;
+    width: 20%;
+    border-bottom: 5px solid $accent-secondary;
+    margin-bottom: 2em;
+    background: #f0f0f0;
+    padding: 0.4em;
+    border-radius: 0;
+    -webkit-appearance: none;
+    transition: margin 0.2s;
+  }
+  p {
+    font-size: 1em;
+    color: $text;
+    font-weight: 400;
+  }
+  #generate {
+    webkit-appearance: none;
+    width: 100%;
+    padding: $padding 0;
+    color: $title;
+    font-size: 1.2em;
+    margin: 0;
+    display: block;
+    background: $accent-primary;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+    &:hover {
+      background: $accent-secondary;
+    }
+  }
+}
+
+@media screen and (max-height: 30em) {
+  #generator #rNum {
+    padding: 0;
+    padding-top: 0.1em;
+  }
+  #inputs input {
+    margin-bottom: 1em;
+  }
+}
