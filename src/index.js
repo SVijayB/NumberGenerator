@@ -46,7 +46,7 @@ class NumGenerator extends Component {
   }
   
   generateNumber = (min, max) => {
-    return Math.floor(Math.random()*(max-min+1)+min)
+    return Math.floor(Math.random()*Number(max-min+1))+Number(min)
   }
   
   getInputs = () => {
